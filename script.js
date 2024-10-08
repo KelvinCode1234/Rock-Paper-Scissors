@@ -20,9 +20,9 @@ function getRandomComputerResult() {
   
     if (hasPlayerWonTheRound(userOption, computerResult)) {
       playerScore++;
-      return `Player wins! ${userOption} beats ${computerResult}`;
+      return `You win! ${userOption} beats ${computerResult}`;
     } else if (computerResult === userOption) {
-      return `It's a tie! Both chose ${userOption}`;
+      return `It's a tie! Both choose ${userOption}`;
     } else {
       computerScore++;
       return `Lima wins! ${computerResult} beats ${userOption}`;
@@ -43,8 +43,8 @@ function getRandomComputerResult() {
   
     if (playerScore === 3 || computerScore === 3) {
       winnerMsgElement.innerText = `${
-        playerScore === 3 ? "Player" : "Lima"
-      } has won the game!`;
+        playerScore === 3 ? "You" : "Lima"
+      } won the game!`;
   
       resetGameBtn.style.display = "block";
       optionsContainer.style.display = "none";

@@ -6,34 +6,32 @@
   box-sizing: border-box;
 }
 
-:root {
-  --very-dark-blue: whitesmoke;
-  --white: black;
-  --yellow: #f1be32;
-  --golden-yellow: #feac32;
-}
-
 body {
-  background-color: #FEF3E2;
+  height: 100vh;
   text-align: center;
-  color: var(--white);
+  color: #000000;
   margin-block-end: -100%;
 }
 
 h1 {
   margin: 15px 0 20px;
-  color: black;
+  color: #000000;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn {
   cursor: pointer;
   width: 130px;
-  margin: 10px;
-  color: var(--very-dark-blue);
-  background-color: rgb(73, 0, 73);
-  border: 3px solid rgb(219, 0, 0);
+  height: 50px;
+  margin: 20px;
+  color: #fff;
+  background-color: #021526;
+  border: 3px solid #ffda73;
   border-radius: 8px;
+}
+
+#rock-btn, #paper-btn, #scissors-btn {
+  font-size: 24px;
 }
 
 .btn:hover {
@@ -42,12 +40,13 @@ h1 {
 }
 
 .rules-container {
-  padding: 15px 0; 
+  width: 65%;
+  padding: 28px 0; 
   margin: auto;
   border-radius: 15px;
-  border: 5px solid var(--yellow);
+  border: 5px solid #ffda73;
   background-color: #021526;
-  color: var(--very-dark-blue);
+  color: #fff;
 }
 
 .rules-container summary {
@@ -62,7 +61,8 @@ h1 {
 
 ul li {
   display: inline-block;
-  margin-left: 28px;
+  margin-left: 30px;
+  align-items: center;
   margin-top: 7px;  
   text-align: center;
 }
@@ -74,27 +74,27 @@ ul li {
 }
 
 .left p {
-  display: flex; 
-  margin-left: 140px;  
-  font-size: 20px;
+  display: block;
+  justify-content: center;
+  font-size: 18px;
 }
 
 .right p {
-  font-size: 18px;
+  font-size: 16px;
   color: #ababab;
   margin-top: 25px;   
 }
 
 span{
-  color: rgb(211, 0, 0);
+  color: rgb(255, 0, 0);
 }
 
 h4 {
   color: wheat;
   text-transform: uppercase;
-  text-decoration: underline;
   font-weight: bold;
   font-size: 20px;
+  margin-left: 15px;
 }
 
 h2 {
@@ -103,17 +103,20 @@ h2 {
 }
 
 
-@media (min-width: 760px) {
+@media (max-width: 760px) {
   .rules-container {
-    width: 60%;
+    width: 90%;
   }
 }
+
+
 
 .score-container {
   display: flex;
   justify-content: space-around;
   margin: 30px 0;
   font-size: 1.2rem;
+  font-family: monospace;
 }
 
 .score {
@@ -127,6 +130,11 @@ h2 {
 
 #winner-msg {
   margin-top: 25px;
+  font-family: monospace;
+}
+
+#results-msg {
+  font-family: monospace;
 }
 
 #reset-game-btn {
@@ -134,42 +142,95 @@ h2 {
   margin: 20px auto;
 }
 
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  .rules-container h4 {
+    font-size: 18px;
+  }
+
+  .rules-container li {
+    font-size: 15px;
+    margin: 3px;
+  }
+
+  .right p {
+    font-size: 15px; 
+  }
+
+  .score-container {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .results-container {
+    font-size: 23px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   body {
     margin-block-end: 15%;
   }
+
   h1 {
-    font-size: 33px;  
+    margin-top: 20px;
+    font-size: 22px;  
   } 
   .rules-container {
-    width: 90%;
+    width: 97%;
   }
   .score-container {
-    font-size: 25px; 
+    font-size: 18px; 
   }
   .btn {
-    width: 26%;
+    width: 21%;
+  }
+
+  #rock-btn, #paper-btn, #scissors-btn {
+    font-size: 20px;
+  }
+
+  .results-container p {
+    font-size: 18px;
+  }
+
+  .results-container button {
+    width: 30%;
+    font-size: 17px;
   }
 
   .left p {
     margin-left: 15px; 
-    font-size: 10px;
+    font-size: 11px;
     font-weight: bolder;
     width: 90%;
   }
 
   .right p {
-     font-size: 15px;
+     font-size: 14px;
+     margin-right: 5px;
+     margin-left: 5px;
+  }
+  h2 {
+    font-size: 16px;
   }
 
   h4 {
-    font-size: 15px;
+    margin: 5px;
+    font-size: 12px;
     text-decoration: none;
   }
 
   ul li {
     display: inline-flex;
-    font-size: 16px;
-    margin-left: 8px;
+    font-size: 13px;
+    margin-left: 5px;
+    text-align: center;
   }
 }
